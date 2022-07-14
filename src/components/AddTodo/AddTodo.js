@@ -8,15 +8,17 @@ import s from "./AddTodo.module.css";
 export const AddTodo = ({ todo, setTodo }) => {
   const [value, setValue] = useState("");
   function saveTodo() {
-    setTodo([
-      ...todo,
-      {
-        id: 4,
-        title: value,
-        status: true,
-      },
-    ]);
-    setValue("");
+    if (value) {
+      setTodo([
+        ...todo,
+        {
+          id: 4,
+          title: value,
+          status: true,
+        },
+      ]);
+      setValue("");
+    }
   }
   return (
     <Row>
